@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Analyzer</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h1>Resume Analyzer</h1>
+  <form action="/" method="POST" enctype="multipart/form-data">
+    <label>Resume (PDF):</label><br>
+    <input type="file" name="resume"><br><br>
+    <label>Job Description:</label><br>
+    <textarea name="job_desc" rows="10" cols="60"></textarea><br><br>
+    <input type="submit" value="Analyze">
+  </form>
+
+  {% if score %}
+    <h2>Match Score: {{ score }}%</h2>
+    <h3>Missing Keywords:</h3>
+    <ul>
+    {% for word in missing %}
+      <li>{{ word }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>

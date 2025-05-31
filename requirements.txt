@@ -1,0 +1,6 @@
+flask
+pdfplumber
+torch
+transformers
+scikit-learn
+sentence-transformers
